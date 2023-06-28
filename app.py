@@ -19,6 +19,8 @@ def dice_hook():
     print(data)
     json_re = json.loads(data)
 
+    print(json_re)
+
     d_channel_type = json_re['d']['channel_type']
 
     if d_channel_type == "GROUP":
