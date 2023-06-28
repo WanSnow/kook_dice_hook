@@ -20,13 +20,14 @@ def dice_hook():
     json_re = json.loads(data)
 
     d_channel_type = json_re['d']['channel_type']
-    d_type = json_re['d']['type']
-    content = json_re['d']['content']
-    target_id = json_re['d']['target_id']
-    msg_id = json_re['d']['msg_id']
-    nonce = json_re['d']['nonce']
 
     if d_channel_type == "GROUP":
+        d_type = json_re['d']['type']
+        content = json_re['d']['content']
+        target_id = json_re['d']['target_id']
+        msg_id = json_re['d']['msg_id']
+        nonce = json_re['d']['nonce']
+
         if d_type == 1:
             g = re.match(r'\.r(\d*)d(\d*)', content, re.I)
             count = g.group(1)
